@@ -52,7 +52,7 @@ function App() {
 
 const cardElements = advertisementsData.map((data) => {
   const cardElement = (
-    <CardComp title={data.title} description={data.description} img={data.image} contact={data.contact}/>
+    <CardComp key={data.id} title={data.title} description={data.description} img={data.image} contact={data.contact}/>
   )
   return cardElement;
 })
@@ -63,7 +63,7 @@ const cardElements = advertisementsData.map((data) => {
       <div className='container'>
         <h2>Advertisement list</h2>
         <div className='container'>
-          <div className='row row-cols-1 row-cols-md-3 g-5'>
+          <div className='row row-cols-1 row-cols-md-3 g-3'>
           {cardElements}
           </div>
         </div>
