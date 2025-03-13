@@ -4,6 +4,8 @@ import './index.css'
 import Body from './Body.jsx'
 import NavbarComp from './NavbarComp.jsx'
 import Heading from './Heading.jsx'
+import 'bootstrap/dist/css/bootstrap.css'
+
 
 
 createRoot(document.getElementById('root')).render(
