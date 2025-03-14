@@ -1,9 +1,8 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
-import Body from './Body.jsx'
+import Body from './components/Body.jsx'
 import NavbarComp from './NavbarComp.jsx'
-import Heading from './Heading.jsx'
+import Heading from './components/Heading.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 
 
