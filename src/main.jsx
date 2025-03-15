@@ -12,11 +12,29 @@ import MainContent from './components/MainContent.jsx'
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <div>
+     
+    <BrowserRouter>
     <NavbarComp />
-    <Heading />  
-    <MainContent />
+    <Heading /> 
+            <Routes>
+            <Route exact path='/' element={<Body />} />
+             <Route path='/home' element={<Body />} />
+            <Route path='/about' element={<About />} />
+        </Routes>
+        </BrowserRouter>
+   
     
-    
-  </StrictMode>,
+  </div>,
 )
+
+
+/*
+<BrowserRouter>
+            <Routes>
+            <Route exact path='/' element={<Body />} />
+             <Route path='/home' element={<Body />} />
+            <Route path='/about' element={<About />} />
+        </Routes>
+        </BrowserRouter>
+*/
