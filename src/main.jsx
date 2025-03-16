@@ -6,7 +6,6 @@ import Heading from './components/Heading.jsx'
 import About from './components/About.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import MainContent from './components/MainContent.jsx'
 
 
 
@@ -28,13 +27,3 @@ createRoot(document.getElementById('root')).render(
   </div>,
 )
 
-
-/*
-<BrowserRouter>
-            <Routes>
-            <Route exact path='/' element={<Body />} />
-             <Route path='/home' element={<Body />} />
-            <Route path='/about' element={<About />} />
-        </Routes>
-        </BrowserRouter>
-*/
