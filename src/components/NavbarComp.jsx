@@ -9,7 +9,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 const NavbarComp = () => {
   return (
     <>
-      <Navbar expand="lg" bg="dark" data-bs-theme="dark" >
+      <Navbar expand="lg" bg="dark" data-bs-theme="dark" sticky="top">
         <Container >
           <Navbar.Brand as={Link} to="/home">React-Marketplace-UI</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -25,22 +25,5 @@ const NavbarComp = () => {
     </>
   );
 };
-
-/*
-<Navbar expand="lg" bg="dark" data-bs-theme="dark" >
-        <Container >
-          <Navbar.Brand href="/home">React-Marketplace-UI</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link  to="#">Login</Nav.Link>
-              <Nav.Link to="#">Sign Up</Nav.Link>
-              <Link to="/about">About</Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-*/
-
 
 export default NavbarComp;

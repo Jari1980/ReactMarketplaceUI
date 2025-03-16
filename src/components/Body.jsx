@@ -30,8 +30,8 @@ function App() {
         </h2>
         <div
           className="container" id="cardContainer">
-          <div className="container">
-            <div className="row row-cols-1 row-cols-sm-3 g-3">
+          <div className="container" >
+            <div className="row row-cols-1 row-cols-sm-3 g-3" id="cardContainerInner">
               {cardElements}
             </div>
           </div>
