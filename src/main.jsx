@@ -6,6 +6,7 @@ import Heading from './components/Heading.jsx'
 import About from './components/About.jsx'
 import 'bootstrap/dist/css/bootstrap.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import FooterComp from './components/FooterComp.jsx'
 
 
 
@@ -21,6 +22,7 @@ createRoot(document.getElementById('root')).render(
              <Route path='/home' element={<Body />} />
             <Route path='/about' element={<About />} />
         </Routes>
+        <FooterComp />
         </BrowserRouter>
    
     
