@@ -6,13 +6,14 @@
     background-image: linear-gradient(0deg,#f0e6e600, #d6d4dd 75%,#0000FF);
 }
 
-h2 {
+#bodyHeadingText {
     display: flex;
     justify-Content: center;
     align-Items: center;
     padding-Top: "20px";
     padding-Bottom: "10px";
-    color: '#d6d4dd',
+    margin-top: 10px;
+    color: #d6d4dd !important;
 }
 
 #cardContainer {
