@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <div className="container-fluid" id="body">
-        <h2>
+        <h2 id="bodyHeadingText">
           Advertisement list
         </h2>
         <div

@@ -13,5 +13,28 @@
     align-Items: center;
     padding-Top: "20px";
     padding-Bottom: "10px";
-    color: '#d6d4dd',
+    color: #d6d4dd !important;
+}
+
+#broccoli {
+    display: inline-block;
+    opacity: 0.9;
+    border-radius: 90px;
+}
+
+#good{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    font-weight: 900;
+    color: #977a77;
+    font-size: 20px;
+
+}
+
+#aboutContainerImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-Content: center;
+    align-Items: center;
 }
