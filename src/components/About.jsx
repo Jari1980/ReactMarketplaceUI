@@ -4,6 +4,8 @@ import broccoli4 from "../assets/broccoli4.jpg";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
+import azureUrl from "../secrets/Url";
 
 const About = () => {
   const [inputs, setInputs] = useState({});
@@ -14,14 +16,34 @@ const About = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    alert(
-      "Thank you " +
-        inputs.username +
-        ", if you send something interesting Ill reach back on " +
-        inputs.email
-    );
+
+    const formData = {
+        sender: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("message").value,
+      };
+
+      const url = `${azureUrl} + '"' + ${formData.sender} + '"' + &email= + '"' + ${formData.email} + '"' + &subject=${formData.subject}`;
+
+    try {
+        const response = await axios.post(url, {
+            mode: "cors",
+            withCredential: true,
+        });
+        console.log('Form data submitted successfully:', response.data);
+        alert(
+            "Thank you " +
+              inputs.name +
+              ", if you send something interesting Ill reach back on " +
+              inputs.email
+          );
+      } catch (error) {
+        console.error('Error submitting form data:', error);
+      }
+
+      setInputs((values) => ({...values, name: "", email: "", message: ""}));
   };
 
   return (
@@ -40,36 +62,39 @@ const About = () => {
           </p>
           <br />
           <br />
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} id="contactForm">
             <span id="contactFormHeading">Contact Form</span>
-            <Form.Group className="col-md-6" controlId="formEmail">
+            <Form.Group className="col-md-6" controlId="email">
               <Form.Label><span className="contactSpan">Email address</span></Form.Label>
               <Form.Control
                 type="email"
                 name="email"
+                //id="email" formEmail
                 value={inputs.email || ""}
                 onChange={handleChange}
                 placeholder="Enter email"
               />
             </Form.Group>
-            <Form.Group className="col-md-6" controlId="formName">
+            <Form.Group className="col-md-6" controlId="name">
               <Form.Label><span className="contactSpan">Name</span></Form.Label>
               <Form.Control
                 type="text"
-                name="username"
-                value={inputs.username || ""}
+                name="name"
+                //id="sender" formName
+                value={inputs.name || ""}
                 onChange={handleChange}
                 placeholder="Enter name"
               />
             </Form.Group>
-            <Form.Group className="col-md-6" controlId="formSubject">
+            <Form.Group className="col-md-6" controlId="message">
               <Form.Label><span className="contactSpan">Subject</span></Form.Label>
               <Form.Control
                 as="textarea"
                 rows={3}
                 type="text"
-                name="subject"
-                value={inputs.subject || ""}
+                name="message"
+                //id="message"  formSubject
+                value={inputs.message || ""}
                 onChange={handleChange}
                 placeholder="Enter subject"
               />
