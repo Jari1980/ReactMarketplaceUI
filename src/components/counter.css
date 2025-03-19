@@ -1,0 +1,34 @@
+
+
+#counter {
+    position: relative;
+    top: -10px;
+    background-image: linear-gradient(0deg,#f0e6e600, #d6d4dd 75%,#0000FF);
+    height: 1000px;
+}
+
+.buttonContainer {
+   display: flex;
+}
+
+.button1 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.button2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+#broccoli2 {
+    display: inline-block;
+    opacity: 0.9;
+    border-radius: 90px;
+    width: 200px;
+}
