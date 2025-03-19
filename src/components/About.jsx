@@ -6,9 +6,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import azureUrl from "../secrets/Url";
+import { useCounterContext } from "./context.jsx";
 
 const About = () => {
   const [inputs, setInputs] = useState({});
+  const {background, setBackground} = useCounterContext();
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -48,7 +50,7 @@ const About = () => {
 
   return (
     <>
-      <div className="container-fluid" id="about">
+      <div className="container-fluid" id="about" style={{background: background}}>
         <br />
         <br />
         <br />
