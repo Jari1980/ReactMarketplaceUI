@@ -9,13 +9,13 @@ import { useCounterContext } from "./context.jsx";
 const Counter = () => {
   const {counter, setCounter} = useCounterContext(0)
 
-  
+  const {background, setBackground} = useCounterContext();
 
 
   return (
     <>
     
-    <div id="counter">
+    <div id="counter" style={{background: background}}>
       <div className="container">
         <br />
         <br />
